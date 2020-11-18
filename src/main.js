@@ -6,6 +6,8 @@ import './plugins/element.js'
 import './assets/css/global.css'
 
 Vue.config.productionTip = false
+// Vue.prototype.$msgbox = MessageBox
+// Vue.prototype.$confirm = MessageBox.confirm;
 
 new Vue({
   router,

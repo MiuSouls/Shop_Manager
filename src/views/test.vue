@@ -35,7 +35,7 @@
 
 <script>
 import {request} from '../network/request.js'
-import {PostLogin} from '../network/login.js'
+import {loginAxios} from '../network/login.js'
 import axios from 'axios'
 export default {
   name: "Login",
@@ -48,11 +48,11 @@ export default {
       rules: {
         username: [
           { required: true, message: "请输入用户名", trigger: "blur" },
-          { min: 2, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
+          { min: 5, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
         ],
         password: [
           { required: true, message: "请输入登录密码", trigger: "blur" },
-          { min: 4, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
+          { min: 5, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
         ],
       },
     };
@@ -64,13 +64,13 @@ export default {
     commitForm(){
       this.$refs.login.validate(result=>{   //表单验证，返回一个函数
         if(result){  //表单验证通过时
-         PostLogin(this.loginform.username,this.loginform.password).then(res=>{
-          //  console.log(res.data)
-            let status =res.data.meta.status
+         loginAxios(this.loginform.username,this.loginform.password).then(res=>{
+           console.log(res.data)
+            const status =res.data.meta.status
+            const token =res.data.data.token
             if(status==200){
-              let tokens =res.data.data.token
               this.loginSuccess("登录成功!")
-              sessionStorage.setItem("token",res.data.data.token)
+              sessionStorage.setItem("token",token)
               this.$router.push("/Home")
             }else{
               this.loginErr("帐号/密码错误")
