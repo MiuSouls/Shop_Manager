@@ -2,6 +2,9 @@ html,body,#app{
     height: 100%;
     margin: 0;
     padding: 0;
+    
+    /* 设置最小宽度，然后在宽度不足的时候会怎加滚动条 */
+    min-width: 1366px;
 }
 
 .el-breadcrumb{

@@ -4,7 +4,7 @@
       <!-- //top -->
       <el-header>
         <div class="Logo">
-          <span>图书管理系统</span>
+          <span>管理系统</span>
         </div>
         <a class="exit" href="" @click="ExitBtn">退出登录</a>
       </el-header>
@@ -130,8 +130,5 @@ export default {
 .el-menu{
   border-right: none;
   
-}
-.el-main{
-  overflow: visible;
 }
 </style>

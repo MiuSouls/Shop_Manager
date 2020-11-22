@@ -167,10 +167,35 @@
                 placement="top"
                 :enterable="false"
               >
-                <el-button type="warning" size="mini">
+                <el-button type="warning" size="mini" @click="AllotUsers(scope.row)">
                   <i class="el-icon-setting"></i>
                 </el-button>
               </el-tooltip>
+              <el-dialog
+                title="分配角色"
+                :visible.sync="AllotUsersDialogVisible"
+                width="50%"
+                @close="CloseSelectValue">
+                <div>
+                  <span>当前用户：{{usersData.username}}</span><br/>
+                  <span>当前角色：{{usersData.role_name}}</span><br/>
+                  <span>当前角色：
+                    <el-select v-model="SelectValue" :placeholder="usersData.role_name">
+                      <el-option
+                        v-for="item in rolesList"
+                        :key="item.id"
+                        :label="item.roleName"
+                        :value="item.id">
+                      </el-option>
+                    </el-select>
+                  </span>
+                </div>
+                <span slot="footer" class="dialog-footer">
+                  <el-button @click="AllotUsersDialogVisible = false">取 消</el-button>
+                  <el-button type="primary" @click="AllotUsersCommit">确 定</el-button>
+                </span>
+              </el-dialog>
+              
             </template>
           </el-table-column>
         </el-table>
@@ -201,7 +226,9 @@ import {
   PostUsers,
   SetUsers,
   DeleteRoles,
-} from "../../network/home";
+  PutUsersRole
+} from "../../network/users";
+import {GetRolesLsit} from '../../network/roles'
 export default {
   name: "users",
   data() {
@@ -231,6 +258,13 @@ export default {
       uid: "",
       type: "",
       AddDialogVisible: false,
+      AllotUsersDialogVisible:false,
+      //存储当前编辑行用户的数据
+      usersData:'',
+      //保存的角色列表
+      rolesList:[],
+      //选择器绑定的value:这里绑定的是角色id
+      SelectValue:'',
       AddUsersForm: {
         // username: "测试账号001",
         // password: "000001",
@@ -413,8 +447,6 @@ export default {
           //     console.log(res)
           //   }
           // )
-
-
         }else{
           console.log(ob)
         }
@@ -448,6 +480,39 @@ export default {
           });   
           console.log("已取消删除!"+id);
         });
+    },
+    //配置用户角色
+    AllotUsers(row){
+      this.usersData=row
+      //在展示对话框之前加载角色列表数据
+      GetRolesLsit().then(res=>{
+        if(res.data.meta.status!=200){
+          this.loginSuccess("获取失败!")
+        }else{
+          this.rolesList=res.data.data
+          // console.log(this.rolesList);
+        }
+      })
+      this.AllotUsersDialogVisible=true
+    },
+    //配置用户角色 提交修改角色
+    AllotUsersCommit(){
+      this.AllotUsersDialogVisible = false
+      console.log("Rid:"+this.SelectValue+"  Uid:"+this.usersData.id);
+      PutUsersRole(this.usersData.id,this.SelectValue).then(res=>{
+        console.log(res);
+        if(res.data.meta.status!=200){
+          this.loginSuccess("更新用户角色失败!")
+        }else{
+          this.loginSuccess("更新成功!")
+          this.ReGetUsers()
+        }
+      })
+    },
+    //关闭时清空选择器内容
+    CloseSelectValue(){
+      this.usersData=''
+      this.SelectValue=''
     }
   },
   created() {
@@ -462,6 +527,9 @@ export default {
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+.user-middle{
+  margin-top: 15px;
 }
 .el-pagination {
   margin-top: 15px;

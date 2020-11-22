@@ -25,7 +25,13 @@ import {
     Pagination,
     Popover,
     Dialog,
-    MessageBox 
+    MessageBox,
+    Tag,
+    Tree,
+    Dropdown,
+    DropdownMenu,
+    Select,
+    Option,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -53,4 +59,12 @@ Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Popover)
 Vue.use(Dialog)
+Vue.use(Tag)
+Vue.use(Tree)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(Select)
+Vue.use(Option)
+
+
 Vue.prototype.$confirm=MessageBox.confirm
