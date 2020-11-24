@@ -180,6 +180,7 @@
                   <span>当前用户：{{usersData.username}}</span><br/>
                   <span>当前角色：{{usersData.role_name}}</span><br/>
                   <span>当前角色：
+                    <!-- // v-model表示选择器x选择内容之后的value值-->
                     <el-select v-model="SelectValue" :placeholder="usersData.role_name">
                       <el-option
                         v-for="item in rolesList"
