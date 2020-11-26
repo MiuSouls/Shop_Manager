@@ -33,6 +33,9 @@ import {
     Select,
     Option,
     Cascader,
+    Tabs,
+    TabPane,
+    Alert,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -67,6 +70,9 @@ Vue.use(DropdownMenu)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Cascader)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Alert)
 
 
 Vue.prototype.$confirm=MessageBox.confirm

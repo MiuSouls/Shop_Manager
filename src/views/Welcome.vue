@@ -1,6 +1,6 @@
 <template>
   <div class="wec">
-      <p>Welcome!!!</p>
+      <p>欢迎使用管理系统！</p>
   </div>
 </template>
 
@@ -13,7 +13,8 @@ export default {
 
 <style lang="less" scoped>
 .wec{
-    background-color: rgb(191, 126, 221);
     height: 100%;
+    font-size: 30px;
+    margin-left: 30px;
 }
 </style>

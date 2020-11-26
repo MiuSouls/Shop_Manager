@@ -13,7 +13,6 @@ export function GetCategories(type,pagenum,pagesize){
   })
 } 
 
-
 // ### 1.6.2. 添加分类
 export function PostCategories(cat_pid,cat_name,cat_level){
   return request({
@@ -26,3 +25,4 @@ export function PostCategories(cat_pid,cat_name,cat_level){
     }
   })
 }
+
