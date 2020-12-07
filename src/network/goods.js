@@ -26,3 +26,21 @@ export function PostCategories(cat_pid,cat_name,cat_level){
   })
 }
 
+// ### 1.6.4. 编辑提交分类
+export function PutCategories(id,cat_name){
+  return request({
+    url:`categories/${id}`,
+    method:'put',
+    data:{
+      cat_name:cat_name
+    }
+  })
+}
+
+// ### 1.6.5. 删除分类
+export function DeleteCategories(id){
+  return request({
+    url:`categories/${id}`,
+    method:'delete'
+  })
+}
