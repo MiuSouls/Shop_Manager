@@ -1,46 +1,41 @@
 import {request} from './request'
 
-// ### 1.6.1. 商品分类数据列表
-export function GetCategories(type,pagenum,pagesize){
+// ### 1.8.1. 商品列表数据
+export function GetGoods(query,pagenum,pagesize){
   return request({
-    url:'categories',
+    url:'goods',
     method:'get',
     params:{
-      type:type,
+      query:query,
       pagenum:pagenum,
       pagesize:pagesize
     }
   })
-} 
+}
 
-// ### 1.6.2. 添加分类
-export function PostCategories(cat_pid,cat_name,cat_level){
+// ### 1.8.5. 删除商品
+export function DeleteGoods(id){
   return request({
-    url:'categories',
+    url:`goods/${id}`,
+    method:'delete'
+  })
+}
+
+//### 1.8.2. 添加商品
+export function PostGoods(form){
+  return request({
+    url:'goods',
     method:'post',
     data:{
-      cat_pid:cat_pid,
-      cat_name:cat_name,
-      cat_level:cat_level
+      goods_name:form.goods_name,
+      goods_cat:form.goods_cat,
+      goods_price:form.goods_price,
+      goods_number:form.goods_number,
+      goods_weight:form.goods_weight,
+      goods_introduce:form.goods_introduce,
+      pics:form.pics,
+      attrs:form.attrs
     }
-  })
-}
 
-// ### 1.6.4. 编辑提交分类
-export function PutCategories(id,cat_name){
-  return request({
-    url:`categories/${id}`,
-    method:'put',
-    data:{
-      cat_name:cat_name
-    }
-  })
-}
-
-// ### 1.6.5. 删除分类
-export function DeleteCategories(id){
-  return request({
-    url:`categories/${id}`,
-    method:'delete'
   })
 }

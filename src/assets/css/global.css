@@ -5,8 +5,17 @@ html,body,#app{
     
     /* 设置最小宽度，然后在宽度不足的时候会怎加滚动条 */
     min-width: 1366px;
+    
 }
 
 .el-breadcrumb{
   margin-bottom: 20px;
+}
+.el-cascader-menu
+{
+  height: 300px; 
+}
+/* 设置富文本编辑器最小高度 */
+.ql-editor{
+  min-height: 300px;
 }

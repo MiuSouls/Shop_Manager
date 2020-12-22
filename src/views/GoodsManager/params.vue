@@ -142,7 +142,7 @@
 </template>
 
 <script>
-import {GetCategories} from '../../network/goods'
+import {GetCategories} from '../../network/categories'
 import {GetCategoriesAttributes,PostCategoriesAttributes,PutCategories,DeleteCategories} from '../../network/params'
 export default {
   name: "params",

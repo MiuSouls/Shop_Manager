@@ -11,6 +11,7 @@ import params from '../views/GoodsManager/params.vue'
 import categories from '../views/GoodsManager/categories.vue'
 import orders from '../views/OrderManager/orders.vue'
 import reports from '../views/DataStatistics/reports.vue'
+import addSteps from '../views/GoodsManager/goods_children/addSteps.vue'
 
 
 Vue.use(VueRouter)
@@ -65,6 +66,10 @@ const routes = [
         path:'/reports',
         component:reports
       },
+      {
+        path:'/addSteps',
+        component:addSteps
+      }
     ]
   },
 ]

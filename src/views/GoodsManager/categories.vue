@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import {GetCategories,PostCategories,PutCategories,DeleteCategories} from '../../network/goods'
+import {GetCategories,PostCategories,PutCategories,DeleteCategories} from '../../network/categories'
 export default {
   name: "categories",
   data(){

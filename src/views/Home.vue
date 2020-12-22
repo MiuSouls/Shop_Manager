@@ -84,6 +84,7 @@ export default {
       GetMenus().then((res) => {
         // console.log(res)
         this.MenuName=res.data.data
+        // console.log(this.MenuName);
         this.defaultactive=sessionStorage.getItem("path")
       })
     },
