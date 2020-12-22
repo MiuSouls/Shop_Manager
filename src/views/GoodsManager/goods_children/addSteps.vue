@@ -160,8 +160,8 @@ export default {
       //商品属性/静态属性
       ParamsDataOnly:[],
       //上传图片地址
-      UploadURL:"http://timemeetyou.com:8889/api/private/v1/upload",
-      // UploadURL:"http://www.ysqorz.top:8888/api/private/v1/",
+      // UploadURL:"http://timemeetyou.com:8889/api/private/v1/upload",
+      UploadURL:"https://www.liulongbin.top:8888/api/private/v1/",
       //上传图片时所需要的请求头，这里是token
       UploadHeaders:{Authorization:sessionStorage.getItem("token")},
       //展示图片所需要的url路径
