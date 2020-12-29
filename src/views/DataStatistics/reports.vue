@@ -64,7 +64,7 @@ export default {
     var myChart = echarts.init(document.getElementById('main'))
     
     GetReports().then(res=>{
-      // 4、准备数据项
+      // 4、准备数据项 //将接口获取到的对象和文档提供的对象进行合并，得到一个新的对象
     const result=_.merge(res.data.data,this.options)
     // 5、展示数据
       myChart.setOption(result)

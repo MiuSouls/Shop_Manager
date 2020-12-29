@@ -94,7 +94,7 @@ export default {
   created() {
     //获取左侧菜单数据
     this.GetMenus()
-
+    console.log("加载了Home!")
   },
 };
 </script>
