@@ -3,40 +3,40 @@ import VueRouter from 'vue-router'
 
 // 懒加载改造
 //登录页
-// import Login from '../views/Login.vue'
-const Login = () =>import(/* webpackChunkName: "login_Home_Welcome"*/ '../views/Login.vue')
-// import Home from '../views/Home.vue'
-const Home = () =>import(/* webpackChunkName: "login_Home_Welcome"*/ '../views/Home.vue')
-// import Welcome from '../views/Welcome.vue'
-const Welcome = () =>import(/* webpackChunkName: "login_Home_Welcome"*/ '../views/Welcome.vue')
+import Login from '../views/Login.vue'
+// const Login = () =>import(/* webpackChunkName: "login_Home_Welcome"*/ '../views/Login.vue')
+import Home from '../views/Home.vue'
+// const Home = () =>import(/* webpackChunkName: "login_Home_Welcome"*/ '../views/Home.vue')
+import Welcome from '../views/Welcome.vue'
+// const Welcome = () =>import(/* webpackChunkName: "login_Home_Welcome"*/ '../views/Welcome.vue')
 
 //UseManager
-// import users from '../views/UseManager/users.vue'
-const users = () =>import(/* webpackChunkName: "UseManager"*/ '../views/UseManager/users.vue')
+import users from '../views/UseManager/users.vue'
+// const users = () =>import(/* webpackChunkName: "UseManager"*/ '../views/UseManager/users.vue')
 
 //PowerManager
-// import roles from '../views/PowerManager/roles.vue'
-const roles = () =>import(/* webpackChunkName: "PowerManager"*/ '../views/PowerManager/roles.vue')
-// import rights from '../views/PowerManager/rights.vue'
-const rights = () =>import(/* webpackChunkName: "PowerManager"*/ '../views/PowerManager/rights.vue')
+import roles from '../views/PowerManager/roles.vue'
+// const roles = () =>import(/* webpackChunkName: "PowerManager"*/ '../views/PowerManager/roles.vue')
+import rights from '../views/PowerManager/rights.vue'
+// const rights = () =>import(/* webpackChunkName: "PowerManager"*/ '../views/PowerManager/rights.vue')
 
 // GoodsManager
-// import goods from '../views/GoodsManager/goods.vue'
-const goods = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/goods.vue')
-// import params from '../views/GoodsManager/params.vue'
-const params = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/params.vue')
-// import categories from '../views/GoodsManager/categories.vue'
-const categories = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/categories.vue')
-// import addSteps from '../views/GoodsManager/goods_children/addSteps.vue'
-const addSteps = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/goods_children/addSteps.vue')
+import goods from '../views/GoodsManager/goods.vue'
+// const goods = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/goods.vue')
+import params from '../views/GoodsManager/params.vue'
+// const params = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/params.vue')
+import categories from '../views/GoodsManager/categories.vue'
+// const categories = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/categories.vue')
+import addSteps from '../views/GoodsManager/goods_children/addSteps.vue'
+// const addSteps = () =>import(/* webpackChunkName: "GoodsManager"*/ '../views/GoodsManager/goods_children/addSteps.vue')
 
 // OrderManager
-// import orders from '../views/OrderManager/orders.vue'
-const orders = () =>import(/* webpackChunkName: "OrderManager"*/ '../views/OrderManager/orders.vue')
+import orders from '../views/OrderManager/orders.vue'
+// const orders = () =>import(/* webpackChunkName: "OrderManager"*/ '../views/OrderManager/orders.vue')
 
 // DataStatistics
-// import reports from '../views/DataStatistics/reports.vue'
-const reports = () =>import(/* webpackChunkName: "DataStatistics"*/ '../views/DataStatistics/reports.vue')
+import reports from '../views/DataStatistics/reports.vue'
+// const reports = () =>import(/* webpackChunkName: "DataStatistics"*/ '../views/DataStatistics/reports.vue')
 
 
 
